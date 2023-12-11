@@ -1,0 +1,23 @@
+.column {
+    float: left;
+}
+
+.custom {
+    height: 75;
+}
+
+
+.left {
+    width: 25%;
+    padding-left: 20;
+}
+
+.middle {
+    width: 25%;
+    padding-left: 30;
+}
+
+.right {
+    width: 25%;
+    padding-left: 40;
+}

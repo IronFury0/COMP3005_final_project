@@ -1,0 +1,26 @@
+html
+head
+    title Add Workshop
+body
+    include ./headers
+
+    script(type="text/javascript", src="../artistAdd.js")
+   
+    h1 Add Group Class
+    form(method="POST", action="/submitGroupClass")
+        div
+            label(for="className") Class Name:
+            input(type="text", name="className", required)
+        div
+            label(for="trainerID") Trainer ID:
+            input(type="number", name="trainerID", required)
+        div
+            label(for="room") Room:
+            input(type="text", name="room", required)
+        div
+            label(for="classDate") Class Date:
+            input(type="date", name="classDate", required)
+        div
+            label(for="startTime") Start Time:
+            input(type="text", name="startTime", required)
+        button(type="submit") Submit

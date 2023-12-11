@@ -1,0 +1,68 @@
+doctype html
+html
+    head
+        title #{u.firstname}'s Info
+        script(type="text/javascript", src="userInfo.js")
+        link(rel="stylesheet", href="userInfoStyle.css", type="text/css")
+    body
+        include ./headers
+
+        h1 #{u.firstname} #{u.lastname}
+        br
+
+        div(id="left", class="column left", style="text-align: left")
+            h4 Workshops:  
+            ul
+            each workshop in workshops
+                li  #{workshop.name}
+
+        div(id="middle", class="column left", style="text-align: left")
+            h4 Personal Training Sessions:
+            ul
+            each t in privateTrainings
+                li #{t.trainerfirstname} #{t.trainerlastname}
+
+        div(id="middle", class="column left", style="text-align: left")
+            h4 Group Fitness Classes:
+            ul
+                each Gclass in publicTrainings
+                    li #{Gclass.classname}
+
+        <form onsubmit="submitHealthMetrics(); return false;" method="post" action="/submitHealthMetrics">
+            div(id="left", class="column left", style="text-align: left")
+                h4 Enter Health Metrics:
+                div
+                    label(for="dateRecorded") Date Recorded:
+                    br
+                    input(type="date", name="dateRecorded", required)
+                    br
+                div
+                    label(for="weight") Weight:
+                    br
+                    input(type="text", name="weight", required)
+                    br
+                div
+                    label(for="height") Height:
+                    br
+                    input(type="text", name="height", required)
+                    br
+                div
+                    label(for="bloodPressure") Blood Pressure:
+                    br
+                    input(type="text", name="bloodPressure", required)
+                    br
+                div
+                    label(for="heartRate") Heart Rate:
+                    br
+                    input(type="text", name="heartRate", required)
+                    br
+                div
+                    input(type="submit", value="Submit Health Metrics", style="width: 220px; height: 40px;")
+
+                div(id="dateDisplay")
+                    h4 Submitted health data:
+                    ul
+                        each item in healthDates
+                            li #{item.daterecorded.toISOString().split('T')[0]}
+                  
+

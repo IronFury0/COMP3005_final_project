@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        title #{workshop.workshopname}
+        link(rel="stylesheet", href="./main.css", type="text/css")
+    body
+        include ./headers
+
+        h1 Workshop Details
+
+        div
+            h2 Workshop: #{workshop.name}
+            p Description: #{workshop.description}
+            p Date: #{workshop.date.toISOString().split('T')[0]}
+            p Start Time: #{workshop.starttime}
+            p Room: #{workshop.room}
+
+            button(onclick=`window.location.href='/registerWorkshop?workshopId=${workshop.workshopid}'`) Register for Workshop

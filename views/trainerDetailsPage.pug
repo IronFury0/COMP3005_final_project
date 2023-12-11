@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        title Trainer Details
+        link(rel="stylesheet", href="./main.css", type="text/css")
+    body
+        include ./headers
+
+        h1 Training Session Details
+
+        div
+            h2 Trainer: #{trainer.firstname} #{trainer.lastname}
+            p Email: #{trainer.email}
+            p Certified: #{trainer.certified}
+
+            button(onclick=`window.location.href='/registerTrainingSession?trainerId=${trainer.trainerid}'`) Register for Session

@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        title= type + ' Page'
+        script(type="text/javascript", src="login.js")
+        link(rel="stylesheet", href="loginStyle.css", type="text/css")
+    
+    body
+        if(flag === 0)
+            h2 Login below:
+            -var type = "Login"
+        else
+            h2 Sign-Up below:
+            -var type = "Sign-Up"
+        
+        if(flag !== 0)
+            h3 First Name: 
+                input(type='text', id="firstName", value="")
+
+            h3 Last Name: 
+                input(type='text', id="lastName", value="")
+
+        h3 Email: 
+            input(type='text', id="email", value="")
+        
+        h3 Password:  
+            input(type='password', id="password", value="")
+
+        input(type='submit', value=`${type}`, style="width: 160px; height: 40px;", onclick=`sendUserCredentialsInfo(${flag})`)

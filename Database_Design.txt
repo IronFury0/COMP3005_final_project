@@ -1,0 +1,62 @@
+Members:
+-Contains info about the member/user
+-MemberID is used to link the member to other tables
+
+Trainers:
+-Contains info about the Trainer
+-Certified lets the member know if the trainer is certified to train
+-TrainerID is used to link to training sessions and group sessions
+
+Admins:
+-Contains info about administrators.
+-Role is used determine what access to the application they have
+
+HealthMetrics:
+-Contains info about the members health.
+-Members will be able to submit multiple health metrics to track their progress
+
+Rooms:
+-Contains info about the room.
+-RoomID is used to link the different sessions and workshops to the rooms
+
+-TrainingSessions:
+-Contains info about the training session
+-Contains references to the trainer and member associted to the session
+
+GroupSessions:
+-contains info about the group sessions
+-Info is related to the sessions itself and not which members are in it
+-TrainerID is used to link the trainer to the session
+
+GroupSessionsMembers:
+-Contains info about the member and the group session they are joining
+-Reference to group session is used to link member to group session
+
+Workshops:
+-contains info for the workshop
+-Info is related to the workshop and not the members in it
+
+WorkshopMembers:
+-Contains info about the members and the workshop they are joining
+-Reference to workshop is used to link member to workshop
+
+Equipment:
+-contains info about the equipment
+-References the room the equipment is in
+
+LoyaltyPoints:
+-Contains info about the loyaltly points for members
+-Members should only have one 
+
+AdminPay:
+-Contains info about Admins salary
+-Linked only to admins and not trainers
+-should only be one per member
+-AdminID is used to link to admin and their role
+
+Guests:
+-Contains info for the members quests
+-MemberID is used to link the guest to the member
+
+Dependants:
+-Contains info about the dependents of members

@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title Class Details
+        link(rel="stylesheet", href="./main.css", type="text/css")
+    body
+        include ./headers
+
+        h1 Class Details
+
+        div
+            h2 Class: #{c.classname}
+            p Trainer: #{c.trainerfirstname} #{c.trainerlastname}
+            p Room: #{c.room}
+            p Date: #{c.date.toISOString().split('T')[0]}
+            p Date: #{c.time}
+
+            button(onclick=`window.location.href='/registerForClass?classId=${c.classid}'`) Register for Class
+
+

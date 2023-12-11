@@ -1,0 +1,23 @@
+body {
+    padding-left: 10px;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 25%;
+}
+
+.middle {
+    width: 40%;
+}
+
+.right {
+    width: 29%;
+}
+
+.hide {
+	display: none;
+}

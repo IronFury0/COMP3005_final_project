@@ -1,0 +1,27 @@
+html
+head
+    title Add Workshop
+body
+    include ./headers
+
+    script(type="text/javascript", src="addworkshop.js")
+   
+    h1 Add Workshop
+    form(method="POST", action="/addWorkshop", onsubmit="submitWorkshop(); return false;")
+        div
+            label(for="workshopName") Workshop Name:
+            input(type="text", name="workshopName", required)
+        div
+            label(for="description") Description:
+            textarea(name="description")
+        div
+            label(for="date") Date:
+            input(type="date", name="date", required)
+        div
+            label(for="startTime") Start Time:
+            input(type="text", name="startTime", required)
+        div
+            label(for="room") Room:
+            input(type="text", name="room", required)
+        button(type="submit") Submit
+

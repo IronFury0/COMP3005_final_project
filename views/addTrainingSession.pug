@@ -1,0 +1,27 @@
+html
+head
+    title Add Workshop
+body
+    include ./headers
+
+    h1 Add Training Session
+    form(method="POST", action="/submitTrainingSession")
+        div
+            label(for="memberID") Member ID:
+            input(type="number", name="memberID", required)
+        div
+            label(for="trainerID") Trainer ID:
+            input(type="number", name="trainerID", required)
+        div
+            label(for="sessionDate") Session Date:
+            input(type="date", name="sessionDate", required)
+        div
+            label(for="sessionTime") Session Time:
+            input(type="text", name="sessionTime", required)
+        div
+            label(for="notes") Notes:
+            textarea(name="notes")
+        div
+            label(for="completed") Completed:
+            input(type="checkbox", name="completed")
+        button(type="submit") Submit

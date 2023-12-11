@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title Registration Page
+        link(rel="stylesheet", href="./main.css", type="text/css")
+    body
+        include ./headers
+
+        h1 Registration Page
+
+        div#workshops.column.left(style="text-align: left")
+            h3 Workshops
+            ul
+                each workshop in workshops
+                    li
+                        a(href=`/workshopDetails?workshopId=${workshop.workshopid}`) #{workshop.name}
+
+        div#privateTrainings.column.middle(style="text-align: left")
+            h3 Personal Training Sessions 
+            ul
+                each training in privateTrainings
+                    li
+                        a(href=`/trainingSessionDetails?trainerId=${training.trainerid}`) #{training.firstname} #{training.lastname}
+
+        div#publicTrainings.column.right(style="text-align: left")
+            h3 Group Fitness Classes
+            ul
+                each classG in publicTrainings
+                    li 
+                        a(href=`/classDetails?classId=${classG.classid}`) #{classG.classname}
